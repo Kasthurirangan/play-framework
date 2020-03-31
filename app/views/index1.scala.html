@@ -1,0 +1,17 @@
+@import models.Book
+@(set : Set[Book])
+
+
+<html>
+    <head>
+        <title> All Books </title>
+    </head>
+
+    <body>
+    @for(book <- set){
+        <a href="@routes.Bookscontroler.show(book.id)">@book.title</a>
+        <p>id = @book.id</p>
+        <p>author = @book.author</p>
+    }
+    </body>
+</html>

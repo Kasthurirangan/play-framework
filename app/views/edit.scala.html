@@ -1,0 +1,18 @@
+@(bookForm1 : Form[Book])(implicit request: Http.Request, messagesApi: play.i18n.Messages)
+
+<html>
+    <head>
+        <title> Edit book </title>
+    </head>
+
+    <body>
+        <h1> Edit Book </h1>
+        @helper.form(action = routes.Bookscontroler.update()){
+            @helper.inputText(bookForm1("id"))
+            @helper.inputText(bookForm1("title"))
+            @helper.inputText(bookForm1("author"))
+
+            <input type="Submit" value="Edit book">
+        }
+    </body>
+</html>

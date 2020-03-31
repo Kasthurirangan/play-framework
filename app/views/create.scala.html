@@ -1,0 +1,19 @@
+@* create Template File *@
+@(bookForm : Form[Book])(implicit request: Http.Request, messagesApi: play.i18n.Messages)
+
+<html>
+    <head>
+        <title> Creating book </title>
+    </head>
+
+    <body>
+        <h1> Books create </h1>
+        @helper.form(action = routes.Bookscontroler.save()){
+            @helper.inputText(bookForm("id"))
+            @helper.inputText(bookForm("title"))
+            @helper.inputText(bookForm("author"))
+
+        <input type="submit" VALUE= "Create submit" >
+        }
+    </body>
+</html>
